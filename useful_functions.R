@@ -6,7 +6,7 @@ zoh <- function(t, x){
   N <- length(t)
   t_new <- c(t[1],rep(t[-c(1,N)], each=2),t[N])
   x_new <- rep(x[-N], each=2)
-  return(data.frame(t=t_new, x=x_new))
+  return(data.frame(t = t_new, x = x_new))
   
 }
 
