@@ -27,3 +27,11 @@ clc <- function(){
   cat("\014")
   
 }
+
+# Quick heatmap
+quickmap <- function(X, col = c("turquoise","dark blue"), main = "", revC = T){
+  
+  colfunc <- colorRampPalette(col)
+  heatmap(X, Rowv = NA, Colv = NA, revC = revC, main = main, col = colfunc(100))
+  
+}
