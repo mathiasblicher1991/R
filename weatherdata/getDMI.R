@@ -59,3 +59,18 @@ station_id_to_name <- function(c){
   )
   
 }
+
+getDMIraw <- function(station, parameter, t1, t2, apikey = apikey_dmi){
+  
+  t1 <- paste0(t1,"T00:00:00Z")
+  t2 <- paste0(t2,"T00:00:00Z")
+  url_base <- "https://dmigw.govcloud.dk/v2/metObs/collections/observation/items?limit=300000"
+  
+  url <- paste0(url_base,"&parameterId=",parameter,"&stationId=",
+                station,"&datetime=",t1,"/",t2,"&api-key=",apikey)
+  response <- GET(url)
+  dat <- content(response, as="parsed")
+  return(dat)
+  
+}
+
