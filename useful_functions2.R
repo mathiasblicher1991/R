@@ -17,8 +17,6 @@ brow <- function(t){
   
 }
 
- 2+2
- 
 # Clear R session
 clc <- function(){
   
