@@ -16,8 +16,6 @@ brow <- function(t){
   cumsum(c(0, rnorm(length(t)-1, sd=sqrt(diff(t)))))
   
 }
-
- 2+2
  
 # Clear R session
 clc <- function(){
